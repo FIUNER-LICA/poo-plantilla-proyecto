@@ -22,7 +22,13 @@ Para lograr esto último, se provee de un directorio `libs` que funciona como un
 pip install -r .\deps\requirements.txt
 ```
 
-5 - Ya puedes comenzar a organizar tu código en los directorios [`apps`](./apps), [`modules`](./modules), y utilizar código reutilizable alojando las bibliotecas en el directorio [`libs`](./libs).
+5 - **Variables de Entorno (.env)**: Se recomienda gestionar configuraciones (como URLs o credenciales) mediante variables de entorno usando la librería `python-dotenv`.
+- Como buena práctica, debes mantener actualizado el archivo `.env.example` en la raíz de tu repositorio. En él debes documentar (solo listar los nombres seguidos de '=', sin los valores) todas las variables que tu sistema necesita. De este modo, quien vea el repositorio sabrá qué variables están disponibles para configurar.
+- Para tu desarrollo local, copia ese archivo y renómbralo a `.env` (este archivo está ignorado por Git por seguridad) y asígnale los valores reales.
+- A nivel código, las variables que son obligatorias para el funcionamiento del sistema no deben tener un valor por defecto. Las variables que configuran comportamientos opcionales deben tener un valor default al leerse (ej: `DEBUG=False` si no se configura).
+- Se recomienda cargar todas estas variables centralizadamente en un archivo de configuración `.py` dentro de la carpeta `modules/`.
+
+6 - Ya puedes comenzar a organizar tu código en los directorios [`apps`](./apps), [`modules`](./modules), y utilizar código reutilizable alojando las bibliotecas en el directorio [`libs`](./libs).
 
 ---
 
