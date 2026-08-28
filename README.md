@@ -14,7 +14,7 @@ Para lograr esto último, se provee de un directorio `libs` que funciona como un
 
 2 - Clona el nuevo repositorio en tu computadora.
 
-3 - En VSCode, abre la carpeta raíz del proyecto clonado.
+3 - En VSCode, abre la carpeta raíz del proyecto clonado. Si les aparece un mensaje indicando que la carpeta se abrió en **Modo restringido**, deben seleccionar **Confiar** en la carpeta.
 
 4 - Crea un entorno virtual e instala las dependencias necesarias. En el archivo [`deps/requirements.txt`](./deps/requirements.txt) se encuentra configurada la dependencia para importar la biblioteca local desde la carpeta [`libs/biblioteca_ayed_fiuner`](./libs/biblioteca_ayed_fiuner) en modo editable:
 
