@@ -14,7 +14,7 @@ Para lograr esto último, se provee de un directorio `libs` que funciona como un
 
 2 - Clona el nuevo repositorio en tu computadora.
 
-3 - En VSCode, abre la carpeta raíz del proyecto clonado.
+3 - En VSCode, abre la carpeta raíz del proyecto clonado. Si les aparece un mensaje indicando que la carpeta se abrió en **Modo restringido**, deben seleccionar **Confiar** en la carpeta.
 
 4 - Crea un entorno virtual e instala las dependencias necesarias. En el archivo [`deps/requirements.txt`](./deps/requirements.txt) se encuentra configurada la dependencia para importar la biblioteca local desde la carpeta [`libs/biblioteca_ayed_fiuner`](./libs/biblioteca_ayed_fiuner) en modo editable:
 
@@ -26,7 +26,7 @@ pip install -r .\deps\requirements.txt
 - Como buena práctica, debes mantener actualizado el archivo `.env.example` en la raíz de tu repositorio. En él debes documentar (solo listar los nombres seguidos de '=', sin los valores) todas las variables que tu sistema necesita. De este modo, quien vea el repositorio sabrá qué variables están disponibles para configurar.
 - Para tu desarrollo local, copia ese archivo y renómbralo a `.env` (este archivo está ignorado por Git por seguridad) y asígnale los valores reales.
 - A nivel código, las variables que son obligatorias para el funcionamiento del sistema no deben tener un valor por defecto. Las variables que configuran comportamientos opcionales deben tener un valor default al leerse (ej: `DEBUG=False` si no se configura).
-- Se recomienda cargar todas estas variables centralizadamente en un archivo de configuración `.py` dentro de la carpeta `modules/`.
+- Se recomienda fuertemente tener un único archivo centralizado (por ejemplo, `settings.py` o `config.py`) que sea el único lugar donde se leen las variables del `.env`. Cualquier otra parte del sistema que requiera de alguna configuración o variable debe importar directamente desde este archivo, evitando leer el entorno múltiples veces a lo largo del código.
 
 6 - Ya puedes comenzar a organizar tu código en los directorios [`apps`](./apps), [`modules`](./modules), y utilizar código reutilizable alojando las bibliotecas en el directorio [`libs`](./libs).
 
