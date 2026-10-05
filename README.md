@@ -48,8 +48,8 @@ La estructura de directorios del proyecto se organiza de la siguiente manera:
 - [**`data/`**](./data): Datos utilizados o generados por el proyecto.
 - [**`deps/`**](./deps): Dependencias del proyecto.
 - [**`docs/`**](./docs): Documentación e informes del proyecto.
-- [**`libs/`**](./libs): Bibliotecas locales reutilizables (ej. `biblioteca_ayed_fiuner`).
-- [**`modules/`**](./modules): Lógica de dominio, clases y controladores del sistema orientado a objetos.
+- [**`libs/`**](./libs): Dependencias y bibliotecas **externas al proyecto principal** (código independiente que no forma parte del dominio de su proyecto, ej. `biblioteca_ayed_fiuner`). No colocar el código propio de la lógica del proyecto aquí.
+- [**`modules/`**](./modules): Lógica de dominio, clases, controladores y **código reutilizable propio del sistema orientado a objetos que están desarrollando**.
 - [**`templates/`**](./templates): Plantillas HTML para el renderizado de vistas (si el proyecto requiere interfaz web).
 - [**`tests/`**](./tests): Pruebas unitarias del proyecto.
 
